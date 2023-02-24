@@ -1,0 +1,17 @@
+.data
+.text
+.globl main
+main:
+li.s  $f1 ,8.0
+li.s $f2, 9.0
+add.s $f0, $f1, $f2
+sub.s $f3, $f0,$f1
+mul.s $f4,$f0,$f1
+li $v0,2
+mov.s $f12, $f2
+syscall
+mov.s $f12, $f3
+syscall
+mov.s $f12,$f4
+syscall
+
