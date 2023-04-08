@@ -9,6 +9,11 @@ li $v0,8
 la $a0, input
 lw $a1,inputSize
 syscall
+#Read the string
+li $v0,8
+la $a0, input
+lw $a1, inputSize
+syscall
 #Output the text 
 li $v0, 4
 la $a0,output
@@ -25,3 +30,4 @@ input: .space 81
 inputSize: .word 80
 prompt: .asciiz " enter an string: "
 output: .asciiz "\n you type the string: "
+prompt2: .asciiz " enter another string: "
