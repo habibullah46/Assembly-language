@@ -1,0 +1,19 @@
+.data
+B: .word 300, 200, 100, 0   # initialize array B
+
+.text
+main:
+    li $t0, 3               # i = 3
+    lw $t1, B               # $t1 = address of B[0]
+    lw $t2, 0($t1)          # $t2 = B[0]
+    lw $t3, 4($t1)          # $t3 = B[1]
+    lw $t4, 8($t1)          # $t4 = B[2]
+    add $t5, $t2, $t3       # $t5 = B[0] + B[1]
+    add $t5, $t5, $t4       # $t5 = B[0] + B[1] + B[2]
+    sll $t0, $t0, 2         # i = i * 4 (to get the address offset)
+    add $t0, $t1, $t0       # $t0 = address of B[i]
+    sw $t5, ($t0)           # B[i] = B[0] + B[1] + B[2]
+
+    # Exit program
+    li $v0, 10              # syscall code 10 for exit
+    syscall
