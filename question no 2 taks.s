@@ -2,12 +2,10 @@
 .text
 .globl main
 main:
-.data
 B:      .word   1, 2, 3, 4, 5 
 size_array: .word   5      
 sum:    .word   0             
 result: .word   0 
-main:
     
     la $t0, B          
     lw $t1, size_array  

@@ -132,7 +132,7 @@ syscall
 addi $t4, $t4, 1
 sub $t1, $t1, $t2
 
-j print_dsc_loop
+j print_loop
 
 done_printing_dsc:
 
